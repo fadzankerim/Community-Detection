@@ -132,7 +132,7 @@ class LouvainAlgorithm:
                         best_gain = gain
                         best_community = community
                 
-                # Pomeri čvor ako poboljšava modularnost
+                # Pomjeri čvor ako poboljšava modularnost
                 if best_community != current_community:
                     self.communities[node] = best_community
                     improved = True
@@ -140,7 +140,7 @@ class LouvainAlgorithm:
         return self._renumber_communities()
     
     def _renumber_communities(self):
-        """Renumerише zajednice od 0 do k-1"""
+        
         mapping = {}
         next_id = 0
         result = []
@@ -178,7 +178,7 @@ class GirvanNewmanAlgorithm:
             order.append(v)
             
             for neighbor in self.graph.adj_list[v]:
-                # Pronađi suseda
+                # Pronadi susjeda
                 if distances[neighbor] < 0:
                     queue.append(neighbor)
                     distances[neighbor] = distances[v] + 1
